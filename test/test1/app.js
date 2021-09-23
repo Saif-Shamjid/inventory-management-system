@@ -1,3 +1,5 @@
+updateScreen()
+
 function initDb(){
     let db = localStorage.getItem('everything');
     if(db){
@@ -26,6 +28,9 @@ function createDb(){
         },
         profit: {
             value: 0
+        },
+        loss: {
+            value: 0
         }
     };
     updateDb(db);
@@ -40,26 +45,56 @@ function updateDb(db){
 
 function updateScreen(){
     let db = initDb();
-    showCapital();
+    showCommmon(db,'capital');
+    showCommmon(db,'invest')
+    showCommmon(db,'selling');
+    showCommmon(db,'cost');
+    showCommmon(db,'profit');
+    showCommmon(db,'loss');
 }
 
 
-function updateCapital(){
+function showCommmon(db,name){
+    let showFild= document.getElementById(name+'-show-fild');
+    let value = db[name].value;
+    showFild.innerText = value;
+}
+
+
+function updateCommon(name){
     let db = initDb();
-    let inputFild = document.getElementById('capital-input-fild');
+    let inputFild = document.getElementById(name+'-input-fild');
     let inputFildValue = parseInt(inputFild.value);
     inputFild.value = '';
 
     if(inputFildValue){
-        db.capital.value += inputFildValue;
+        db[name].value += inputFildValue;
         updateDb(db);
+        updateScreen();
     }
     
 }
 
-function showCapital(db){
-    let showFild= document.getElementById('capital-show-fild');
-    let value = db.capital.value;
-    showFild.innerText = value;
+function updateInvest(){
+    let db = initDb();
+    let capitalValue = db.capital.value;
+    let inputFild = document.getElementById('invest-input-fild');
+    let inputFildValue = parseInt(inputFild.value);
+    inputFild.value = '';
+    
+    if(inputFildValue){
+        if(capitalValue >= inputFildValue){
+            db.capital.value -= inputFildValue;
+            db.invest.value += inputFildValue;
+            updateDb(db);
+            updateScreen();
+        }
+        else{
+            console.log('not enough money in capital');
+        }
+    }
+}
 
+function updateProfit(){
+    
 }

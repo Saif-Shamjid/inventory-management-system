@@ -20,19 +20,23 @@
         </div>
         <div class="cash-item">
             <h2>invest</h2>
-            <h2>100</h2>
+            <h2 id="invest-show-fild">100</h2>
         </div>
         <div class="cash-item">
             <h2>selling</h2>
-            <h2>100</h2>
+            <h2 id="selling-show-fild">100</h2>
         </div>
         <div class="cash-item">
             <h2>cost</h2>
-            <h2>100</h2>
+            <h2 id="cost-show-fild">100</h2>
         </div>
         <div class="cash-item">
             <h2>profit</h2>
-            <h2>100</h2>
+            <h2 id="profit-show-fild">100</h2>
+        </div>
+        <div class="cash-item">
+            <h2>loss</h2>
+            <h2 id="loss-show-fild">100</h2>
         </div>
     </section>
 
@@ -40,22 +44,22 @@
         <div class="input-section-item">
             <h2>capital</h2>
             <input type="text" id="capital-input-fild">
-            <button class="btn btn-success" onclick="updateCapital()">submit</button>
+            <button class="btn btn-success" onclick="updateCommon('capital')">submit</button>
         </div>
         <div class="input-section-item">
             <h2>Invest</h2>
-            <input type="text">
-            <button class="btn btn-success">submit</button>
+            <input type="text" id="invest-input-fild">
+            <button class="btn btn-success" onclick="updateInvest()">submit</button>
         </div>
         <div class="input-section-item">
             <h2>selling</h2>
-            <input type="text">
-            <button class="btn btn-success">submit</button>
+            <input type="text" id="selling-input-fild">
+            <button class="btn btn-success" onclick="updateCommon('selling')">submit</button>
         </div>
         <div class="input-section-item">
             <h2>cost</h2>
-            <input type="text">
-            <button class="btn btn-success">submit</button>
+            <input type="text" id="cost-input-fild">
+            <button class="btn btn-success" onclick="updateCommon('cost')">submit</button>
         </div>
     </section>
 
