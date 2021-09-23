@@ -72,6 +72,11 @@ function updateCommon(name){
         updateDb(db);
         updateScreen();
     }
+
+    if(name=='cost' || name=='selling'){
+        profitLossControlar()
+        updateScreen();
+    }
     
 }
 
@@ -94,7 +99,31 @@ function updateInvest(){
         }
     }
 }
-
-function updateProfit(){
     
+function profitLossControlar(){
+    let db = initDb();
+    let sellingAmount = db.selling.value;
+    let costAmount = db.cost.value;
+    
+    clearValue(db,'profit');
+    clearValue(db,'loss');
+
+    if(sellingAmount>costAmount){
+        updateProfitLoss(db,sellingAmount,costAmount,'profit');
+    }
+    else if(costAmount>sellingAmount){
+        updateProfitLoss(db,costAmount,sellingAmount,'loss');
+    }
+}
+
+function updateProfitLoss(db,amount1,amount2,whereToAdd){
+    let value1 = amount1-amount2;
+    db[whereToAdd].value = value1;
+    
+    updateDb(db);
+}
+
+function clearValue(db,which){
+    db[which].value = 0;
+    updateDb(db);
 }
