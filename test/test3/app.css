@@ -1,0 +1,11 @@
+.create-fild {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
+
+#total-price-show-fild {
+    border: 1px solid skyblue;
+    border-radius: 5px;
+}
