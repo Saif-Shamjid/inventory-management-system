@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory managemant system</title>
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    
+
+    <section class="cash">
+        <div class="cash-item">
+            <h2>Capital</h2>
+            <h2 id="capital-show-fild">100</h2>
+        </div>
+        <div class="cash-item">
+            <h2>invest</h2>
+            <h2 id="invest-show-fild">100</h2>
+        </div>
+        <div class="cash-item">
+            <h2>selling</h2>
+            <h2 id="selling-show-fild">100</h2>
+        </div>
+        <div class="cash-item">
+            <h2>cost</h2>
+            <h2 id="cost-show-fild">100</h2>
+        </div>
+        <div class="cash-item">
+            <h2>profit</h2>
+            <h2 id="profit-show-fild">100</h2>
+        </div>
+        <div class="cash-item">
+            <h2>loss</h2>
+            <h2 id="loss-show-fild">100</h2>
+        </div>
+    </section>
+
+    <section class="input-section">
+        <div class="input-section-item">
+            <h2>capital</h2>
+            <input type="text" id="capital-input-fild">
+            <button class="btn btn-success" onclick="updateCommon('capital')">submit</button>
+        </div>
+        <div class="input-section-item">
+            <h2>Invest</h2>
+            <input type="text" id="invest-input-fild">
+            <button class="btn btn-success" onclick="updateInvest()">submit</button>
+        </div>
+        <div class="input-section-item">
+            <h2>selling</h2>
+            <input type="text" id="selling-input-fild">
+            <button class="btn btn-success" onclick="updateCommon('selling')">submit</button>
+        </div>
+        <div class="input-section-item">
+            <h2>cost</h2>
+            <input type="text" id="cost-input-fild">
+            <button class="btn btn-success" onclick="updateCommon('cost')">submit</button>
+        </div>
+    </section>
+
+
+
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
